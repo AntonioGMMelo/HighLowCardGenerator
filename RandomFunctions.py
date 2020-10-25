@@ -67,7 +67,7 @@ def c(dif) -> str: #returns the "card" a number between 1 and 13 for the value (
 
 def numc(dif) -> int: #returns the value of the card
     random_variable_instance = random()
-    if (0 < random_variable_instance and (1 * d) / 13>=random_variable_instance): # Ace with a probability of d/13
+    if (0 < random_variable_instance and (1 * dif) / 13>=random_variable_instance): # Ace with a probability of d/13
         return 1
     elif ((1 * dif) / 13 < random_variable_instance and (2 * dif) / 13>=random_variable_instance): # 2 with a probability of d/13
         return 2
@@ -79,11 +79,11 @@ def numc(dif) -> int: #returns the value of the card
         return 5
     elif (((5 * dif) / 13 < random_variable_instance and (6 * dif) / 13>=random_variable_instance) or (dif + ((1 - dif) / 5) < random_variable_instance and dif + ((2 * (1 - dif)) / 5)>=random_variable_instance)): # 6 with a probability of d/13 + (1-d)/5
         return 6
-    elif (((6 * dif) / 13 < random_variable_instance and (7 * dif) / 13>=random_variable_instance) or (d + ((2 * (1 - dif)) / 5) < random_variable_instance and dif + ((3 * (1 - dif)) / 5)>=random_variable_instance)): # 7 with a probability of d/13 + (1-d)/5
+    elif (((6 * dif) / 13 < random_variable_instance and (7 * dif) / 13>=random_variable_instance) or (dif + ((2 * (1 - dif)) / 5) < random_variable_instance and dif + ((3 * (1 - dif)) / 5)>=random_variable_instance)): # 7 with a probability of d/13 + (1-d)/5
         return 7
-    elif (((7 * dif) / 13 < random_variable_instance and (8 * dif) / 13 >=random_variable_instance) or (d + ((3 * (1 - dif)) / 5) < random_variable_instance and dif + ((4 * (1 - dif)) / 5)>=random_variable_instance)): # 8 with a probability of d/13 + (1-d)/5
+    elif (((7 * dif) / 13 < random_variable_instance and (8 * dif) / 13 >=random_variable_instance) or (dif + ((3 * (1 - dif)) / 5) < random_variable_instance and dif + ((4 * (1 - dif)) / 5)>=random_variable_instance)): # 8 with a probability of d/13 + (1-d)/5
         return 8
-    elif (((8 * dif) / 13 < random_variable_instance and (9 * dif) / 13>=random_variable_instance) or (d + ((4 * (1 - dif)) / 5) < random_variable_instance and 1>=random_variable_instance)): # 9 with a probability of d/13 + (1-d)/5
+    elif (((8 * dif) / 13 < random_variable_instance and (9 * dif) / 13>=random_variable_instance) or (dif + ((4 * (1 - dif)) / 5) < random_variable_instance and 1>=random_variable_instance)): # 9 with a probability of d/13 + (1-d)/5
         return 9
     elif ((9 * dif) / 13 < random_variable_instance and (10 * dif) / 13>=random_variable_instance): # 10 with a probability of d/13
         return 10
@@ -103,3 +103,21 @@ def suitc() -> str: #returns the suit of the card with a 25% chance for each sui
         return "Hearts"
     elif 0.75<random_variable_instance and 1>=random_variable_instance:
         return "Spades"
+x=0
+y=10
+while x< y:
+    #print(h(0))
+    #print(h(1))
+    #print(h(2))
+    #print(j(0))
+    #print(j(1))
+    #print(j(2))
+    #print(n(0))
+    #print(n(1))
+    #print(n(2))
+    #print(d(0))
+    #print(d(1))
+    #print(d(2))
+    #print(c(1))
+    print(c(0.5))
+    x=x+1
