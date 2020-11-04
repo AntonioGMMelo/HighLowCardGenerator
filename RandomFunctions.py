@@ -62,8 +62,9 @@ def d(option): #Returns the difficulty for the player
     else:
         print("Invalid Option")
 
-def c(dif) -> str: #returns the "card" a number between 1 and 13 for the value (A to K) and the suit i.e (13,"Clubs") would be the King of clubs
-    return numc(dif),suitc()
+def c(dif) -> str: #returns the "card" a number between 1 and 13 for the value (A to K) and the suit and the bonus i.e (13,"Clubs",0.49) would be the King of clubs with a bonus of 0.49
+    bonus = bonusc()
+    return numc(dif),suitc(),bonus
 
 def numc(dif) -> int: #returns the value of the card
     random_variable_instance = random()
@@ -103,8 +104,11 @@ def suitc() -> str: #returns the suit of the card with a 25% chance for each sui
         return "Hearts"
     elif 0.75 < random_variable_instance and 1 >= random_variable_instance:
         return "Spades"
+def bonusc() -> float:
+    random_variable_instance = 0.5*random() #random number between 0 and 0.5
+    return random_variable_instance
 x = 0
-y = 10
+y = 100
 while x < y:
     #print(h(0))
     #print(h(1))
