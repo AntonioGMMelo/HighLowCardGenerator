@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  min-height: 200px;
+}
+
+
+
+
+    </style>
+    <title>HighLowCardGenerator</title>
+</head>
+<body>
+
+
+    <form method="POST" action="{% url 'settings' %}" accept-charset="UTF-8">
+        {% csrf_token %}
+        <input class="form-control" type="hlOption" placeholder="hlOption" name="hlOption">
+        <input class="form-control" type="numPlayersOption" placeholder="numPlayersOption" name="numPlayersOption">
+        <input class="form-control" type="dificultyOp" placeholder="dificultyOp" name="dificultyOp">
+        <input class="form-control" type="jokerOp" placeholder="jokerOp" name="jokerOp">
+
+        <input class="btn btn-default btn-login" type="submit" value="Change settings">
+
+    </form>
+
+
+
+
+
+
+
+</body>
+</html>

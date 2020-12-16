@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .column {
+  float: left;
+  width: 25%;
+  padding: 2px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+body {
+    background-color: darkgreen;
+}
+    </style>
+<title>High Low Card Generator</title>
+</head>
+<body>
+
+<a href="{% url 'settings' %}" class="button">Opções</a>
+
+    <h1>Game</h1>
+    <h1>{{ highOrLow }}</h1>
+
+
+    <div class="row">
+        <div class="column">
+            <img id="cardPlayer" src={{ cardPlayer }} style="display:none" width = "200" />
+            <h1>Eu</h1>
+            <h2>{{ hJoker }}</h2>
+            <h3>{{ valueBonusPlayer }}</h3>
+        </div>
+        <div class="column">
+            <img id="cardOp1" src={{ cardOp1 }} style="display:none"  width = "200"/>
+            <h1>Oponente 1</h1>
+            <h2>{{ op1Joker }}</h2>
+            <h3> {{ valueBonusOp1 }}</h3>
+        </div>
+
+        <div class="column">
+
+            <img id="cardOp2" src={{ cardOp2 }} style="display:none" width = "200" />
+            <h1>Oponente 2</h1>
+            <h2>{{ op2Joker }}</h2>
+            <h3> {{ valueBonusOp2 }}</h3>
+        </div>
+
+        <div class="column">
+
+            <img id="cardOp3" src={{ cardOp3 }} style="display:none" width = "200" />
+            <h1>Oponente 3</h1>
+            <h2>{{ op3Joker }}</h2>
+            <h3> {{ valueBonusOp3 }}</h3>
+        </div>
+
+        <br>
+        <br>
+
+        <div id="delayedText" style="visibility:hidden">
+            <h1>{{ winnerMessage }}</h1>
+            <br>
+            <br>
+            <a href="{% url 'game' %}" class="button">Jogar outra vez!</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+setTimeout(function(){
+    document.getElementById('cardPlayer').style.display = 'block';
+},2000);
+
+
+setTimeout(function(){
+    document.getElementById('cardOp1').style.display = 'block';
+},4000);
+
+
+setTimeout(function(){
+    document.getElementById('cardOp2').style.display = 'block';
+},6000);
+
+
+setTimeout(function(){
+    document.getElementById('cardOp3').style.display = 'block';
+},8000);
+
+window.onload = function(){
+  // Change this value to however many seconds you want to delay the text by.
+  var theDelay = 8;
+  var timer = setTimeout("showText()",theDelay*1000)
+}
+
+function showText(){
+  document.getElementById("delayedText").style.visibility = "visible";
+}
+
+
+</script>
+
+
